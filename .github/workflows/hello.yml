@@ -11,4 +11,4 @@ jobs:
   job_ex1:
     runs-on: ubuntu-latest
     steps:
-      - run : echo "Je teste l'ex"
+      - run : echo "Je teste l'exercice 1"
