@@ -1,0 +1,12 @@
+name: Variables Sortie
+
+on:
+  workflow_dispatch:
+jobs:
+  exemple-variables-sortie:
+    runs-on: ubuntu-latest  
+    steps:
+      - id: monStep
+        run: echo "::set-output name=NOMVARIABLE::hello"
+      - run: echo **${{ steps.monStep.outputs.NOMVARIABLE }}**
+      - run: echo $GITHUB_REPOSITORY 
