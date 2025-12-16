@@ -1,0 +1,22 @@
+name: Exercice matrice avec Node.js
+
+on:
+  workflow_dispatch:
+
+jobs:
+  node-ubuntu-matrix:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, ubuntu-22.04]
+        node-version: [16, 18, 20]
+    
+    steps:
+      - name: Installer Node.js
+        uses: actions/setup-node@v6.1.0
+        with:
+          node-version: ${{ matrix['node-version'] }}
+
+      - name: Afficher la version de Node
+        run: node -v
