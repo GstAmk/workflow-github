@@ -1,0 +1,16 @@
+name: Exercice node
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Installer Node.js
+        uses: actions/setup-node@v6.1.0
+        with:
+          node-version: 18
+
+      - name: Afficher la version de Node
+        run: node -v
